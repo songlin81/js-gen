@@ -3,7 +3,7 @@ JS Quick Reference
 
 ##JS KB
 
-* Currying
+* currying
 * caller v.s. callee
 * 
 
