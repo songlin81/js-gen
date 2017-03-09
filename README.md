@@ -13,6 +13,13 @@ JS Quick Reference
     * constructor
 * IIFE (Avoid Global Pollution)
 * object literal notation
+* OO
+    * factory
+    * constructor
+    * prototype
+    * hybrid
+    * initialization
+* 
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流

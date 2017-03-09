@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+        // JS OO -- a. factory.
+        // Limitation: not able to identify type of instance.
+        function createBlog(name, url) {
+          var o = new Object();
+          o.name = name;
+          o.url = url;
+          o.sayUrl= function() {
+            console.log(this.url);
+          }
+          return o;
+        }
+        var blog1 = createBlog('n1', 'http://www.entrebean.com/');
+        blog1.sayUrl();
+        console.log("^^^^^^^^^^ JS OO -- a. factory ^^^^^^^^^^^^^^^^\n\n");
+
+
+        // JS OO -- b. constructor.
+        // To create specify type of instance
+        // limit: function created each time instantiated.
+        function Blogger(name, url) {
+          this.name = name;
+          this.url = url;
+          this.alertUrl = function() {
+            console.log(this.url);
+          }
+        }
+        var blog = new Blogger('n2', 'http://www.entrebean.com/');
+        console.log(blog instanceof Blogger);  // true
+
+        // to overcome the limit:
+        function Blogger2(name, url) {
+          this.name = name;
+          this.url = url;
+          this.alertUrl = alertUrl;
+        }    
+        function alertUrl() {
+          console.log(this.url);
+        }
+        var blog = new Blogger2('n3', 'http://www.n3.com/'),
+        blog2 = new Blogger2('n4', 'http://www.n4.net/');
+        blog.alertUrl();  // http://www.n3.com/
+        blog2.alertUrl();  // http://www.n4.net/
+        //limit: expose to global.
+        console.log("^^^^^^^^^^ JS OO -- b. contructor ^^^^^^^^^^^^^^^^\n\n");
+
+        
+        // JS OO -- c. prototype.
+        function Blog3() {
+        }
+        Blog3.prototype.name = 'AAA';
+        Blog3.prototype.url = 'http://tools.aaa.net/';
+        Blog3.prototype.friend = ['fr1', 'fr2', 'fr3', 'fr4'];
+        Blog3.prototype.alertInfo = function() {
+          console.log(this.name + this.url + this.friend );
+        }
+        var blog = new Blog3(),
+        blog2 = new Blog3();
+        blog.alertInfo();  // AAAhttp://tools.aaa.net/fr1,fr2,fr3,fr4
+        blog2.alertInfo();  // AAAhttp://tools.aaa.net/fr1,fr2,fr3,fr4
+        
+        blog.name = '1';
+        blog.url = 'http://***.com';
+        blog.friend.pop();
+        blog2.name = '2';
+        blog2.url = 'http://+++.com';
+        blog.alertInfo();  // 1http://***.comfr1,fr2,fr3
+        blog2.alertInfo();  // 2http://+++.comfr1,fr2,fr3   
+        //limit: same reference.
+        console.log("^^^^^^^^^^ JS OO -- c. prototype. ^^^^^^^^^^^^^^^^\n\n");  
+        
+        
+        // JS OO -- d. hybrid.
+        function Blog4(name, url, friend) {
+          this.name = name;
+          this.url = url;
+          this.friend = friend;
+        }
+        Blog4.prototype.alertInfo = function() {
+          console.log(this.name + this.url + this.friend);
+        }
+        var blog = new Blog4('AAA', 'http://tools.aaa.net/', ['fr1', 'fr2', 'fr3']),
+        blog2 = new Blog4('BBB', 'http://**.com', ['a', 'b']);
+        blog.friend.pop();
+        blog.alertInfo();  // AAAhttp://tools.aaa.net/fr1,fr2
+        blog2.alertInfo();  // BBBhttp://**.coma,b
+        console.log("^^^^^^^^^^ JS OO -- d. hybrid. ^^^^^^^^^^^^^^^^\n\n");  
+        
+        
+        // JS OO -- e. initialization.
+        function Blog5(name, url) {
+          this.name = name;
+          this.url = url;
+          if (typeof this.alertInfo != 'function') {
+            // executed only once
+            console.log('exe time');
+            Blog5.prototype.alertInfo = function() {
+              alert(this.name + this.url);
+            }
+          }
+        }       
+        var blog = new Blog5('AAA', 'http://tools.aaa.net'),    //exe time
+        blog2 = new Blog5('BBB', 'http:***.com');
+        blog.alertInfo();  //AAAhttp://tools.aaa.net
+        blog2.alertInfo();  //BBBhttp:***.com
+        console.log("^^^^^^^^^^ JS OO -- e. initialization. ^^^^^^^^^^^^^^^^\n\n");
+      
+    </script>
+</head>
+<body>
+    <span>JS OO</span>
+</body>
+</html>
