@@ -19,6 +19,9 @@ JS Quick Reference
     * prototype
     * hybrid
     * initialization
+* timer
+    * setTimeout
+    * clearTimeout
 * 
 
 ##有问题反馈

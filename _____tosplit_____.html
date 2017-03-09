@@ -101,30 +101,7 @@
         var myTest = new Test3("test2");
         console.log(myTest); //String "test2"
         console.log("^^^^^^^^^^ Part M. New operator -- c. function with return new value. ^^^^^^^^^^^^^^^^");
-  
-        
-        // Part O. timer
-        var timer = null, SLEEP = 1000, interval=10;
-        var timef = function ()
-        {
-            //var time = document.getElementById ('time');
-            if ((interval--) == 1)
-            {
-                clearTimeout (timer);
-                document.getElementById ('btn').removeAttribute("disabled");
-                document.getElementById ('btn').value="获取验证码";
-                interval=10;
-                return;
-            }
-            document.getElementById ('btn').setAttribute("disabled", true);
-            document.getElementById ('btn').value=interval+'s';
-            timer = setTimeout (timef, SLEEP);
-        }
-        var reset=function(){
-            document.getElementById ('btn').removeAttribute("disabled");
-        }
-        console.log("^^^^^^^^^^ Part O. timer ^^^^^^^^^^^^^^^^");
-        
+ 
         
         // Part P. semicolon in Javascript
         //Js多个文件集成成一个文件后，压缩代码时避免发生语法错误，可以如下处理
@@ -363,9 +340,7 @@
     </script>
     
     <br/>
-    <!-- Part O. timer -->
-    <input onclick="timef();" id="btn" type="button" value="获取验证码" style="width:111px;height:11px"></button>
-     
+    
     <!-- Part Z. Call & Apply -->
     <br/>
     <a href="www.sina.com">Sina</a><br />
