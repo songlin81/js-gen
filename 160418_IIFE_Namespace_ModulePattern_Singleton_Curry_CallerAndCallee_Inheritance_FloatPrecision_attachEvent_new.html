@@ -562,31 +562,6 @@
         console.log("^^^^^^^^^^ Part Y. float to int ^^^^^^^^^^^^^^^^");
         
         
-        //Part Z. Call & Apply
-        //1. Attached function on the fly
-        object1 = {
-            name:'frank',
-            greet:function(){
-                console.log('hello '+this.name)
-            }
-        };
-        object2 = {
-            name:'andy'
-        };
-        // Note that object2 has no greet method, but we may "borrow" from object1:
-        object1.greet.call(object2);
-        
-        //2.The difference is that apply lets you invoke the function with arguments as an array;
-        //call requires the parameters be listed explicitly.
-        function theFunction(name, profession) {
-            console.log("My name is " + name + " and I am a " + profession + ".");
-        }
-        theFunction("John", "fireman");
-        theFunction.apply(undefined, ["Susan", "school teacher"]);
-        theFunction.call(undefined, "Claude", "mathematician");
-        console.log("^^^^^^^^^^ Part Z. Call & Apply ^^^^^^^^^^^^^^^^");
-        
-        
         //Part AA. operator +
         //使用+号时需谨慎
         //JavaScript 和其他编程语言不同的是，在 JavaScript 中，’+'除了表示数字值相加，字符串相连接以外，

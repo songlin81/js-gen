@@ -5,6 +5,8 @@ JS Quick Reference
 
 * currying
 * caller v.s. callee
+* call v.s. apply
+    * call: attach function on the fly
 * 
 
 ##有问题反馈

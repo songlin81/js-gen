@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        // Call: Attached function on the fly
+        object1 = {
+            name:'abc',
+            greet:function(){
+                alert('--> '+this.name);
+            }
+        };
+        object2 = {
+            name:'def'
+        };
+        // Note that object2 has no greet method, but we may "borrow" from object1:
+        object1.greet.call(object2);
+        
+        
+        // The difference is that apply lets you invoke the function with arguments as an array;
+        // call requires the parameters be listed explicitly.
+        function theFunction(name, profession) {
+            alert("My name is " + name + " and I am a " + profession + ".");
+        }
+        theFunction("John", "fireman");
+        theFunction.apply(undefined, ["Susan", "school teacher"]);
+        theFunction.call(undefined, "Claude", "mathematician");
+        
+    </script>
+</head>
+<body>
+    <span>call v.s. apply</span>
+</body>
+</html>
