@@ -30,7 +30,6 @@
         Test1.prototype.Get_Test1String = function () {
             return this.b;
         };
-        
         var Test2 = function(str) {
             this.a = str;
         }
@@ -38,7 +37,6 @@
         Test2.prototype.get_string = function () {
             return this.a;
         };
-        
         var myTest2 = new Test2("test2");
         alert(myTest2); //Object
         alert(myTest2.get_string()); //"test2"
