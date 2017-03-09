@@ -4,47 +4,6 @@
     <meta charset="UTF-8">
     <script type="text/javascript">
         
-        // Part C. Currying is the technique of transforming a function that takes multiple arguments 
-        // in such a way that it can be called as a chain of functions each with a single argument.
-        function add(x, y) {
-            return x + y;
-        }
-        console.log('add(2, 3) == ' + add(2, 3));
-        function curry_add(x) {
-            return function(y) {
-                return x + y;
-            }
-        }
-        console.log('curry_add(2)(3) == ' + curry_add(2)(3));
-        
-        function addGenerator( num ) {
-            // Return a simple function for adding two numbers
-            // with the first number borrowed from the generator
-            return function( toAdd ) {
-                return num + toAdd
-            };
-        }
-        // addFive now contains a function that takes one argument,
-        // adds five to it, and returns the resulting number
-        var addFive = addGenerator( 5 );
-        // We can see here that the result of the addFive function is 9,
-        // when passed an argument of 4
-        console.log( "addFive( 4 ) == 9 is " + (addFive( 4 ) == 9) );
-        console.log("^^^^^^^^^^ Part C Currying ^^^^^^^^^^^^^^^^");
-        
-        
-        // Part D. Callee and Caller.
-        function inner(){
-            console.log(arguments.callee);        //指向拥有这个arguments对象的函数，即inner()
-            console.log(arguments.callee.caller); //这个属性保存着调用当前函数的函数的引用,即outer()
-        }
-        function outer(){
-            inner();
-        }
-        outer();
-        console.log("^^^^^^^^^^ Part D Callee and Caller ^^^^^^^^^^^^^^^^");
-        
-        
         // Part E. Inheritance three ways -- a. call and apply
         function Person(name,age,rel){
             this.name=name; 

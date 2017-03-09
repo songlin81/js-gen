@@ -4,6 +4,8 @@ JS Quick Reference
 ##JS KB
 
 * Currying
+* caller v.s. callee
+* 
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
