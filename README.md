@@ -3,11 +3,7 @@ JS Quick Reference
 
 ##JS KB
 
-* `group by` to eliminate duplicates but show other columns
-* case
-* millions of deletions
-* CTE recursion
-* Row number and top
+* 
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
@@ -17,7 +13,7 @@ JS Quick Reference
 
 ##References
 
-* [MSDN](http://www.mozilla.com/) 
+* [Mozilla](http://www.mozilla.com/) 
 
 ##关于作者
 
